@@ -1,0 +1,50 @@
+(function () {
+  'use strict';
+
+  angular
+    .module('crowdsource.routes', ['ngRoute'])
+    .config(config);
+
+  config.$inject = ['$routeProvider'];
+
+  /**
+  * @name config
+  * @desc Define valid application routes
+  */
+  function config($routeProvider) {
+    $routeProvider.when('/', {
+      templateUrl: '/static/templates/intro.html',
+    }).otherwise('/')
+
+    .when('/home', {
+      templateUrl: '/static/templates/home.html',
+      controller: 'HomeController',
+    }).otherwise('/')
+
+    .when('/register', {
+      controller: 'RegisterController',
+      controllerAs: 'vm',
+      templateUrl: '/static/templates/authentication/register.html'
+    })
+
+    .when('/worker', {
+      controller: 'WorkerController',
+
+      templateUrl: '/static/templates/Task/worker.html'
+    })
+    .when('/requester', {
+      controller: 'RequesterController',
+
+      templateUrl: '/static/templates/Task/requester.html'
+    })
+    .when('/login', {
+      controller: 'LoginController',
+      controllerAs: 'vm',
+      templateUrl: '/static/templates/authentication/login.html'
+    }).otherwise('/')
+
+    .when('/terms', {
+      templateUrl: '/static/templates/terms.html'
+    }).otherwise('/');
+  }
+})();
