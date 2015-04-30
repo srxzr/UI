@@ -6,13 +6,13 @@ angular
     'ngAnimate',
     'ngSanitize',
     'mgcrea.ngStrap',
-
     // local modules
     'crowdsource.config',
     'crowdsource.routes',
     'crowdsource.authentication',
     'crowdsource.layout',
     'crowdsource.home',
+    'crowdsource.ranking',
   ]);
 
 angular
